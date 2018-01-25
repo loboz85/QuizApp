@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingLeft">10dp</dimen>
+    <dimen name="name_margin">25dp</dimen>
+    <dimen name="title_height">180dp</dimen>
+    <dimen name="title_text">80sp</dimen>
+    <dimen name="qa_margin">15dp</dimen>
+
+
+</resources>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="mountains_quiz">Mountains Quiz</string>
+    <string name="enter_name">Enter your name here</string>
+    <string name="q1">1. Which is the world’s second highest mountain?</string>
+    <string name="q2">2. Which is the highest peak of the Alps range?</string>
+    <string name="q2_a">Großglockner</string>
+    <string name="q2_b">Mt. Rosa</string>
+    <string name="q2_c">Mt.Blanc</string>
+    <string name="q3">3. The highest mountain of Australia is:</string>
+    <string name="q3_a">Mt.Kosciuszko</string>
+    <string name="q3_b">Mt.McKinley</string>
+    <string name="q3_c">Ayers Rock</string>
+    <string name="q4">4. Which is the world longest continuous mountain barrier?</string>
+    <string name="q4_a">Urals</string>
+    <string name="q4_b">Andes</string>
+    <string name="q4_c">Himalayas</string>
+    <string name="q5">5. Which mountain ranges are located in North America?</string>
+    <string name="q5_a">Rocky Mountains</string>
+    <string name="q5_b">Andes</string>
+    <string name="q5_c">Sierra Nevada</string>
+    <string name="q6">6. Which mountain you can see on the below picture? </string>
+    <string name="q6_a">Mt. Everest</string>
+    <string name="q6_b">Matterhorn</string>
+    <string name="q6_c">K2</string>
+</resources>
