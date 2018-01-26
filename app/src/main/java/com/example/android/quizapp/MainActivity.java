@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     int points = 0;
+    String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     // method is called when submit button is clicked
     public void submitPoints(View view) {
-        //User add name
-        EditText fieldName = (EditText) findViewById(R.id.field_name);
-        String addName = fieldName.getText().toString();
 
-        //
+        EditText fieldName = (EditText) findViewById(R.id.field_name);
+        userName = fieldName.getText().toString();
+
         EditText mountainName = (EditText) findViewById(R.id.q1);
         String isK2 = mountainName.getText().toString();
 
@@ -56,20 +56,24 @@ public class MainActivity extends AppCompatActivity {
 
         int points = calculatePoints(isBlancClicked, isKosciuszkoClicked, isAndesClicked,
                 isMatterhornClicked, isRockyClicked, isSierraClicked, isAndesq5Clicked, isK2);
-        String pointsMessage = createQuizSummary(points);
+        String pointsMessage = createQuizSummary(userName,points);
         displayMessage(pointsMessage);
 
-//        Intent intent = new Intent(Intent.ACTION_SEND);
-//        intent.setType("text/html");
-//        intent.putExtra(Intent.EXTRA_SUBJECT, "Order Summary");
-//        intent.putExtra(Intent.EXTRA_TEXT, pointsMessage);
-//        if (intent.resolveActivity(getPackageManager()) != null) {
-//            startActivity(intent);
-//
-//        }
-
-        Button submitButton = (Button) findViewById(R.id.submit_button);;
+        Button submitButton = (Button) findViewById(R.id.submit_button);
         submitButton.setVisibility(View.INVISIBLE);
+    }
+
+        // method is called when score button is clicked
+    public void scoreButton(View view) {
+        String pointsMessage = createQuizSummary(userName,points);
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/html");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Quiz Summary");
+        intent.putExtra(Intent.EXTRA_TEXT, pointsMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+
+        }
 
     }
 
@@ -133,12 +137,24 @@ public class MainActivity extends AppCompatActivity {
      * Create summary of a quiz
      *
      * @param points
+     * @param name
      * @return text summary
      */
-    private String createQuizSummary(int points) {
-        String pointsMessage = "You've gained: " + points + " points";
+    private String createQuizSummary(String name,int points) {
+        String pointsMessage;
+        if (points < 4) {
+            pointsMessage = name + ", your score is " + points + "/6 points." + "\nNext time will be better.";
+            pointsMessage = pointsMessage + "\nBelow is the list of correct answers:" + "\n1. K2" + "\n2. Mt.Blanc" +
+                    "\n3. Mt. Kosciuszko" + "\n4. Andes" + "\n5. Rocky Mountains & Sierra Nevada"
+                    + "\n6. Matterhorn";
+            
+        } else {
+            pointsMessage = name + ", great job!! " + "Your score is: " + points + "/6 points.";
+            pointsMessage = pointsMessage + "\nBelow is the list of correct answers:" + "\n1. K2" + "\n2. Mt.Blanc" +
+                    "\n3. Mt. Kosciuszko" + "\n4. Andes" + "\n5. Rocky Mountains & Sierra Nevada"
+                    + "\n6. Matterhorn";
+        }
         return pointsMessage;
-
     }
 
     /**

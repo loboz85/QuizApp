@@ -21,10 +21,11 @@
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/dolomites2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/alfa_slab_one"
+                android:fontFamily="@font/archivo_black"
                 android:gravity="center"
                 android:text="@string/mountains_quiz"
                 android:textColor="@color/Name"
@@ -184,14 +185,13 @@
                 android:id="@+id/checkbox_q5b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignRight="@id/checkbox_q5a"
                 android:text="@string/q5_b" />
 
             <CheckBox
                 android:id="@+id/checkbox_q5c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/checkbox_q5a"
+                android:layout_marginBottom="@dimen/name_margin"
                 android:text="@string/q5_c" />
 
         </LinearLayout>
@@ -230,9 +230,10 @@
     </LinearLayout>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:scaleType="centerCrop"
+            android:paddingLeft="@dimen/paddingLeft"
             android:src="@drawable/gora3" />
 
         <Button
@@ -249,7 +250,18 @@
             android:id="@+id/summary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingLeft="@dimen/paddingLeft"
             android:layout_marginBottom="@dimen/qa_margin" />
+
+        <Button
+            android:id="@+id/email_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/name_margin"
+            android:layout_marginTop="@dimen/name_margin"
+            android:layout_gravity="center"
+            android:onClick="scoreButton"
+            android:text="Send Score" />
 
         <Button
             android:id="@+id/reset_button"
@@ -259,7 +271,7 @@
             android:layout_marginTop="@dimen/name_margin"
             android:layout_gravity="center"
             android:onClick="resetButton"
-            android:text="Reset" />
+            android:text="Try Again" />
 
 </LinearLayout>
 </ScrollView>
