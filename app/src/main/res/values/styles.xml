@@ -7,6 +7,17 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:windowBackground">@color/windowBackground</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="BlueButton" parent="android:Widget.Material.Button">
+        <item name="android:colorButtonNormal">#23BBE7</item>
+        <item name="android:borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+    </style>
+
+    <style name="Blue2Button" parent="android:Widget.Material.Button">
+        <item name="android:colorButtonNormal">#ff3b5998</item>
+        <item name="android:borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>
     </style>
 
 </resources>

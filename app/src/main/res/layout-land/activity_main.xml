@@ -18,25 +18,26 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="180dp"
+                android:layout_height="@dimen/title_height"
                 android:scaleType="centerCrop"
                 android:src="@drawable/dolomites2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/alfa_slab_one"
+                android:fontFamily="@font/archivo_black"
                 android:gravity="center"
                 android:text="@string/mountains_quiz"
-                android:textColor="@color/Name"
-                android:textSize="35sp" />
+                android:textColor="@color/blue"
+                android:textSize="@dimen/title_text" />
 
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/paddingLeft"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/paddingLeft">
 
             <EditText
                 android:id="@+id/field_name"
@@ -45,7 +46,7 @@
                 android:layout_marginBottom="@dimen/name_margin"
                 android:layout_marginRight="@dimen/name_margin"
                 android:layout_marginTop="@dimen/name_margin"
-                android:hint="Enter your name here"
+                android:hint="@string/enter_name"
                 android:inputType="textCapWords" />
 
             <TextView
@@ -56,12 +57,12 @@
             <EditText
                 android:id="@+id/q1"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/q1_height"
                 android:layout_marginBottom="@dimen/name_margin"
                 android:layout_marginRight="@dimen/name_margin"
-                android:hint="Type here"
+                android:hint="@string/type_here"
                 android:inputType="textCapWords"
-                android:textSize="14sp" />
+                android:textSize="@dimen/q1" />
 
 
             <TextView
@@ -184,14 +185,13 @@
                     android:id="@+id/checkbox_q5b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignRight="@id/checkbox_q5a"
                     android:text="@string/q5_b" />
 
                 <CheckBox
                     android:id="@+id/checkbox_q5c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/checkbox_q5a"
+                    android:layout_marginBottom="@dimen/name_margin"
                     android:text="@string/q5_c" />
 
             </LinearLayout>
@@ -206,7 +206,6 @@
                 android:id="@+id/radioGroup_q6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/name_margin"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -230,48 +229,61 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
+            android:layout_width="@dimen/img_width"
+            android:layout_height="@dimen/img_height"
             android:paddingLeft="@dimen/paddingLeft"
-            android:src="@drawable/gora3" />
+            android:src="@drawable/gora8" />
 
         <Button
             android:id="@+id/submit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/name_margin"
-            android:layout_marginTop="@dimen/name_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/name_margin"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:onClick="submitPoints"
-            android:text="Submit" />
+            android:stateListAnimator="@null"
+            android:text="@string/submit_button"
+            android:textColor="@color/button_text"
+            android:textSize="@dimen/button_text"
+            android:theme="@style/BlueButton" />
 
         <TextView
             android:id="@+id/summary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/paddingLeft"
-            android:layout_marginBottom="@dimen/qa_margin" />
+            android:paddingLeft="@dimen/paddingLeft" />
 
         <Button
             android:id="@+id/email_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/name_margin"
-            android:layout_marginTop="@dimen/name_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/name_margin"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:onClick="scoreButton"
-            android:text="Send Score" />
+            android:stateListAnimator="@null"
+            android:text="@string/send_button"
+            android:textColor="@color/button_text"
+            android:textSize="@dimen/button_text"
+            android:theme="@style/BlueButton"
+            android:visibility="invisible" />
 
         <Button
-            android:id="@+id/reset_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/name_margin"
-            android:layout_marginTop="@dimen/name_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
             android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/name_margin"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:onClick="resetButton"
-            android:text="Try Again" />
+            android:stateListAnimator="@null"
+            android:text="@string/try_button"
+            android:textColor="@color/button_text"
+            android:textSize="@dimen/button_text"
+            android:theme="@style/Blue2Button" />
 
     </LinearLayout>
 </ScrollView>

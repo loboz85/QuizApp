@@ -3,11 +3,12 @@
     <string name="mountains_quiz">Mountains Quiz</string>
     <string name="enter_name">Enter your name here</string>
     <string name="q1">1. Which is the world’s second highest mountain?</string>
+    <string name="type_here">Type here</string>
     <string name="q2">2. Which is the highest peak of the Alps range?</string>
     <string name="q2_a">Großglockner</string>
-    <string name="q2_b">Mt. Rosa</string>
+    <string name="q2_b">Mt.Rosa</string>
     <string name="q2_c">Mt.Blanc</string>
-    <string name="q3">3. The highest mountain of Australia is:</string>
+    <string name="q3">3. The highest mountain in Australia is:</string>
     <string name="q3_a">Mt.Kosciuszko</string>
     <string name="q3_b">Mt.McKinley</string>
     <string name="q3_c">Ayers Rock</string>
@@ -23,4 +24,7 @@
     <string name="q6_a">Mt. Everest</string>
     <string name="q6_b">Matterhorn</string>
     <string name="q6_c">K2</string>
+    <string name="submit_button">Submit Your Answers</string>
+    <string name="send_button">Send Score</string>
+    <string name="try_button">Try Again</string>
 </resources>
