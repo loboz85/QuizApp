@@ -1,6 +1,7 @@
 package com.example.android.quizapp;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -88,6 +89,31 @@ public class MainActivity extends AppCompatActivity {
         disableCheckbox(R.id.checkbox_q5a);
         disableCheckbox(R.id.checkbox_q5b);
         disableCheckbox(R.id.checkbox_q5c);
+
+        // correct answers - add to q1 and for the rest highlight correct answers in green
+
+        int textColor = Color.parseColor("#4CAF50");
+
+        mountainName.setText("K2");
+        mountainName.setTextColor(textColor);
+
+        blancButton.setButtonTintList(ColorStateList.valueOf(textColor));
+        blancButton.setTextColor(textColor);
+
+        kosciuszkoButton.setButtonTintList(ColorStateList.valueOf(textColor));
+        kosciuszkoButton.setTextColor(textColor);
+
+        andesButton.setButtonTintList(ColorStateList.valueOf(textColor));
+        andesButton.setTextColor(textColor);
+
+        matterhornButton.setButtonTintList(ColorStateList.valueOf(textColor));
+        matterhornButton.setTextColor(textColor);
+
+        rockyCheckbox.setTextColor(textColor);
+        rockyCheckbox.setButtonTintList(ColorStateList.valueOf(textColor));
+
+        sierraCheckbox.setTextColor(textColor);
+        sierraCheckbox.setButtonTintList(ColorStateList.valueOf(textColor));
     }
 
     // method is called when score button is clicked
@@ -167,12 +193,14 @@ public class MainActivity extends AppCompatActivity {
         String pointsMessage;
         SpannableString ss1;
         int indexOfLast = 0;
-        if (points < 4) {
-            pointsMessage = name + "," + "\nyour score is " + points + "/6 points.";
+        if (points < 5) {
+            pointsMessage = name + "," + "\nyour score is " + points + "/6 points." +
+                    "\nNOW MOVE YOUR BUTT AND" + "\nGO TO THE MOUNTAINS ;)!!";
             indexOfLast = pointsMessage.length();
 
         } else {
-            pointsMessage = name + ", great job!! " + "\nYour score is: " + points + "/6 points.";
+            pointsMessage = name + ", great job!! " + "\nYour score is: " + points + "/6 points."+
+                    "\nNOW MOVE YOUR BUTT AND" + "\nGO TO THE MOUNTAINS ;)!!";
             indexOfLast = pointsMessage.length();
         }
 
@@ -181,8 +209,9 @@ public class MainActivity extends AppCompatActivity {
                 + "\n6. Matterhorn";
 
         ss1 = new SpannableString(pointsMessage);
-        ss1.setSpan(new RelativeSizeSpan(2f), 0, indexOfLast, 0); // set size
-        ss1.setSpan(new ForegroundColorSpan(Color.BLACK), 0, indexOfLast, 0);// set color
+        int textColor = Color.parseColor("#ff3b5998");
+        ss1.setSpan(new RelativeSizeSpan(1.5f), 0, indexOfLast, 0); // set size
+        ss1.setSpan(new ForegroundColorSpan(textColor), 0, indexOfLast, 0);// set color
         return ss1;
     }
 
@@ -197,15 +226,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * method disable all answers after submit button is clicked
+     * method disable all questions after submit button is clicked
      */
 
     // disable radioButtons
     private void disableRadioButton(int idx) {
         RadioGroup radioGroup = (RadioGroup) findViewById(idx);
-        for (int i = 0; i < radioGroup.getChildCount(); i++) {
-            radioGroup.getChildAt(i).setEnabled(false);
-        }
+        radioGroup.getChildAt(0).setEnabled(false);
+        radioGroup.getChildAt(1).setEnabled(false);
+        radioGroup.getChildAt(2).setEnabled(false);
+
     }
 
     // disable EditText

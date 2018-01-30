@@ -7,4 +7,5 @@
     <color name="blue">#23BBE7</color>
     <color name="white">#FFFFFF</color>
     <color name="button_text">#FFFFFF</color>
+    <color name="correct_answers">#4CAF50</color>
 </resources>
